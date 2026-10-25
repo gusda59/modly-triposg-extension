@@ -163,7 +163,7 @@ def setup(python_exe: str, ext_dir: Path, gpu_sm: int, cuda_version: int = 0) ->
         # torch 2.6 is not published for cu128; minimum is 2.7.0
         torch_ver   = "2.7.0"
         torch_index = "https://download.pytorch.org/whl/cu128"
-        torch_pkgs  = ["torch==2.7.0", "torchvision==0.22.0"]
+        torch_pkgs = ["torch>=2.7.0", "torchvision>=0.22.0"]
         cuda_tag    = "128"
         print(f"[setup] GPU SM {gpu_sm}, CUDA {cuda_version} -> PyTorch 2.7 + CUDA 12.8 (Blackwell)")
     elif gpu_sm == 0 or gpu_sm >= 70:
